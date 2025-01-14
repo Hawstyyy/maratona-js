@@ -114,3 +114,199 @@ Tarefas:
 Use um loop para gerar os números pares.
 Adicione os números a um array e exiba-o no console.
 */
+
+function primeiro() {
+  const x = window.prompt("Insira o primeiro numero:");
+  const y = window.prompt("Insira o segundo numero:");
+  const soma = Number(x) + Number(y);
+  console.log(soma)
+}
+
+function segundo() {
+  const num = Number(window.prompt("Insira o número para verificarmos se é par ou impar"));
+  if (num % 2 == 0) {
+    console.log(`O número ${num} é par`);
+  }
+  else {
+    console.log(`O número ${num} é impar`);
+  }
+}
+
+function terceiro() {
+  for(let i = 1; i <= 10; i++) {
+    console.log(i);
+  }
+}
+
+function terceiroWhile() {
+  let i = 1;
+  while (i<= 10) {
+    console.log(i);
+    i++;
+  }
+}
+
+function quarto() {
+  let i = 1;
+  const num = Number(window.prompt("Insira o número para gerar a tabuada")); 
+  while (i <= 10) {
+    res = num * i;
+    console.log(`${num} x ${i} = ${res}`);
+    i++
+  }
+}
+
+function quinto() {
+  const array = [3, 7, 2, 9, 5];
+  let maior = array[0];
+  array.forEach(x => {
+    if (x > maior) {
+      maior = x;
+    }
+  });
+  console.log(`O maior número do array: ${array} é ${maior}`);
+}
+
+function sexto() {
+  let palavra = window.prompt("Informe a palavra que deseja inverter");
+  let array = palavra.split("");
+  const arrayInv = inv(array);
+  console.log(`A palavra ${palavra} inversa será: ${arrayInv}`);
+}
+
+function inv(array) {
+  const arrayInv = array.reverse();
+  const palavraInv = arrayInv.join("");
+  return palavraInv;
+}
+
+function setimo() {
+  let soma = 0;
+  const array = [1, 2, 3, 4, 5];
+  array.forEach(x => {
+    soma += Number(x);
+  });
+  console.log(soma);
+}
+
+function oitavo() {
+  let num = Number(window.prompt("Insira o número para verificarmos se é primo"));
+  primo(num);
+}
+
+function primo(num) {
+  let i = 2;
+  if (num == 2) {
+    console.log(`O numero ${num} é primo`);
+  }
+  else {
+    let count = 0;
+    for(i; i < num; i++){
+      div = num % i;
+      if (div > 1) {
+        count++;
+      }
+    }
+    if (count > 1) {
+      console.log(`O número ${num} não é primo`);
+    }
+    else {
+      console.log(`O número ${num} é primo`);
+    }
+  }
+}
+
+function nono() {
+  const num = Number(window.prompt('Insira o numero que deseja fatorar'));
+  fatorial(num);
+}
+
+function fatorial(num) {
+  let i = 1;
+  let numFat = 1
+  let array = [];
+  for(i; i <= num; i++) {
+    array.push(i)
+  }
+  array.forEach(x => {
+    numFat *= x
+  });
+  console.log(`!${num} = ${numFat}`)
+}
+
+function decimo() {
+  let palavra = window.prompt('Insira a palavra');
+  palindromo(palavra);
+}
+
+function palindromo(palavra) {
+  let array = palavra.split("");
+  array = array.reverse();
+  let palavraInv = array.join("");
+  if (palavra == palavraInv) {
+    console.log(`A palavra ${palavra} é um palindromo`);
+  }
+  else {
+    console.log(`A palavra ${palavra} não é um palindromo`);
+  }
+}
+
+function onze() {
+  let frase = window.prompt('Insira a frase');
+  vogalChecker(frase);
+}
+
+function vogalChecker(frase) {
+  let count = 0;
+  const vogais = ['a','e','i','o','u'];
+  array = frase.split("")
+  array.forEach(palavra => {
+    vogais.forEach(vogal => {
+      if (palavra == vogal) {
+        count++;
+      }
+    });
+  });
+  console.log(`O total de vogais na frase é ${count}`)
+}
+
+function doze() {
+  let random = Math.floor(Math.random() * 101);
+  console.log(random);
+}
+
+function treze() {
+  const array =  [4, -3, 2, -1, 0];
+  array.forEach(num => {
+    if (num < 0) {
+      let id = array.indexOf(num);
+      console.log(id)
+      array.splice(id, 1, 0);
+    }
+  });
+  console.log(array)
+}
+
+function quartorze() {
+  const ilegal = ['palavra1', 'palavra2'];
+  const frase = window.prompt('Insira a frase que deseja');
+  const array = frase.split(" ");
+  array.forEach(palavra => {
+    ilegal.forEach(palavraIlegal => {
+      if (palavra == palavraIlegal) {
+        window.alert('Palavra ilegal detectada');
+      }
+    });
+  });
+}
+
+function quinze() {
+  let i = 0;
+  let array = [];
+  for(i; i <= 20; i++) {
+    if (i % 2 == 0) {
+      array.push(i);
+    }
+  }
+  console.log(array);
+}
